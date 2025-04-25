@@ -3,6 +3,7 @@
 #show: template.with(
   frontmatter: (
     title: "vak: a neural network framework for researchers studying animal acoustic communication",
+    short-title: "vak: a neural network framework for animal acoustic communication",
     abstract: [
 How is speech like birdsong? What do we mean when we say an animal learns their vocalizations?
 Questions like these are answered by studying how animals communicate with sound.

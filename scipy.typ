@@ -1,5 +1,13 @@
-// #import "@preview/pubmatter:0.1.0"
-#import "pubmatter/pubmatter.typ"
+#import "@preview/pubmatter:0.2.0"
+
+#let conferenceTitle = "SciPy 2025";
+#let conferenceDates = "July 7 - July 13, 2025";
+#let conferenceLogo = image("logo.svg");
+#let proceedingsTitle = [
+      Proceedings of the 24#super[th]\
+      Python in Science Conference
+];
+#let proceedingsIssn = "ISSN: 2575-9752";
 
 #let leftCaption(it) = context {
   set text(size: 8pt)
@@ -48,9 +56,9 @@
 ) = {
   let fm = pubmatter.load(frontmatter)
   let dates;
-  if ("date" in fm and type(fm.date) == "datetime") {
+  if ("date" in fm and type(fm.date) == datetime) {
     dates = ((title: "Published", date: fm.date),)
-  // } else if (type(date) == "dictionary") {
+  // } else if (type(date) == dictionary) {
   //   dates = (date,)
   } else {
     dates = date
@@ -81,22 +89,17 @@
     ),
   )
   let logo = [
-    #image("logo.svg")
+    #conferenceLogo
     #v(-13pt)
     #align(center)[
-      #text(size: 15pt, style: "italic", weight: "bold", fill: theme.color, font: theme.font)[SciPy 2024]
+      #text(size: 15pt, style: "italic", weight: "bold", fill: theme.color, font: theme.font, conferenceTitle)
       #v(-6pt)
-      #text(size: 10pt, style: "italic", weight: "light", fill: theme.color, font: theme.font)[July 8 - July 14, 2024]
+      #text(size: 10pt, style: "italic", weight: "light", fill: theme.color, font: theme.font, conferenceDates)
     ]
     #v(13pt)
     #set par(justify: true)
-    #text(size: 7.5pt, fill: black.lighten(10%), font: theme.font)[
-      Proceedings of the 23#super[nd]\
-      Python in Science Conference
-    ]
-    #text(size: 6pt, fill: black.lighten(40%), font: theme.font)[
-      ISSN: 2575-9752
-    ]
+    #text(size: 7.5pt, fill: black.lighten(10%), font: theme.font, proceedingsTitle)
+    #text(size: 6pt, fill: black.lighten(40%), font: theme.font, proceedingsIssn)
   ]
 
   show link: it => [#text(fill: theme.color)[#it]]
@@ -172,7 +175,7 @@
       box(
         width: 27%,
         {
-          if (type(logo) == "content") {
+          if (type(logo) == content) {
             logo
           } else {
             image(logo, width: 100%)

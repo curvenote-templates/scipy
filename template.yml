@@ -7,8 +7,6 @@ files:
   - template.typ
   - scipy.typ
   - logo.svg
-  - pubmatter/pubmatter.typ
-  - pubmatter/validate-frontmatter.typ
 authors:
   - name: Rowan Cockett
     github: rowanc1

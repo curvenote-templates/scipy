@@ -7,6 +7,9 @@ files:
   - template.typ
   - scipy.typ
   - logo.svg
+  # Remove after pubmatter:0.2.2 is released
+  - pubmatter.typ
+  - validate-frontmatter.typ
 authors:
   - name: Rowan Cockett
     github: rowanc1

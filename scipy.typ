@@ -1,4 +1,4 @@
-#import "@preview/pubmatter:0.2.0"
+#import "./pubmatter.typ"
 
 #let conferenceTitle = "SciPy 2025";
 #let conferenceDates = "July 7 - July 13, 2025";
@@ -189,7 +189,7 @@
   // Title and subtitle
   pubmatter.show-title-block(fm)
 
-  let corresponding = fm.authors.filter((author) => "email" in author).at(0, default: none)
+  let corresponding = pubmatter.get-corresponding-author(fm)
   let margin = (
     if corresponding != none {
       (

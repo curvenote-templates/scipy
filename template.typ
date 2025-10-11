@@ -63,6 +63,12 @@
   [# if author.email #]
         email: "[-author.email-]",
   [# endif #]
+  [# if author.corresponding #]
+        corresponding: [-author.corresponding.value-],
+  [# endif #]
+  [# if author.equal_contributor #]
+        equal-contributor: [-author.equal_contributor-],
+  [# endif #]
   [# if author.affiliations #]
         affiliations: ([#- for aff in author.affiliations -#]"[-aff.index-]"[#- if not loop.last -#],[#- endif -#][#- endfor -#]),
   [# endif #]

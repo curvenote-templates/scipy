@@ -95,6 +95,8 @@
 // This may be moved below the first paragraph to start columns later
 // #set page(columns: 2, margin: (x: 1.5cm, y: 2cm),)
 
+#set figure(placement: none)
+
 [-CONTENT-]
 
 [# if doc.bibtex #]
